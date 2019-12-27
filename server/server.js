@@ -14,9 +14,11 @@ function sayHello(call, callback) {
   callback(null, {message: 'Hello ' + call.request.name});
 }
 function main() {
+  const port = 3000
+  const ip = '10.1.30.106'
   var server = new grpc.Server();
   server.addService(hello_proto.Greeter.service, {sayHello: sayHello});
-  server.bind('10.1.30.106:50051', grpc.ServerCredentials.createInsecure());
+  server.bind(`${ip}:${port}`, grpc.ServerCredentials.createInsecure());
   server.start();
 }
 main();
