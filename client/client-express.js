@@ -14,7 +14,7 @@ const express = require('express')
 const app = express()
 const port = 3000
 function main() {
-  var client = new hello_proto.Greeter('10.1.30.106:50051', grpc.credentials.createInsecure());
+  var client = new hello_proto.Greeter('10.1.30.106:22', grpc.credentials.createInsecure());
   var user;
   app.get('/:id', function (req, res) {
     user = req.params.id;
