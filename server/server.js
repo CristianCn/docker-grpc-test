@@ -18,7 +18,11 @@ function main() {
   const ip = '10.1.30.106'
   var server = new grpc.Server();
   server.addService(hello_proto.Greeter.service, {sayHello: sayHello});
+<<<<<<< HEAD
   server.bind(`${ip}:${port}`, grpc.ServerCredentials.createInsecure());
+=======
+  server.bind('10.1.30.106:22', grpc.ServerCredentials.createInsecure());
+>>>>>>> 1398318267f570625dc5f596839796721e48b31f
   server.start();
 }
 main();
